@@ -102,7 +102,10 @@ function task() {
       return
     }
   }
-  maid.close() // 关闭APP
+
+  // 在 oppo r15 使用 maid.close() 无法关闭app
+  // maid.close() // 关闭APP
+  back() // 关闭APP
 }
 
 module.exports = task

@@ -1,6 +1,11 @@
+/**
+ * 开锁
+ * 
+ */
+
 const config = require('../config')
 
-function wakeUpAndUnlock () {
+function wakeUpAndUnlock() {
   const keyboard = []
 
   if (!device.isScreenOn()) {

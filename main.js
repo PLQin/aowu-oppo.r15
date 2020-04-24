@@ -1,3 +1,5 @@
+"auto"
+
 // global
 require('./common/better')
 require('./common/maid')
@@ -5,27 +7,28 @@ require('./common/maid')
 const unlock = require('./common/unlock')
 
 // scripts
-const yunshanfu = require('./scripts/云闪付')
-const yiqianbao = require('./scripts/壹钱包')
-const pinganzhengquan = require('./scripts/平安证券')
-const liantong = require('./scripts/联通营业厅')
-const jd = require('./scripts/京东')
-const jdWallet = require('./scripts/京东金融')
-const kfc = require('./scripts/kfc')
-const lynkco = require('./scripts/lynkco')
-const dazhong = require('./scripts/大众点评')
-const pahcz = require('./scripts/平安好车主')
-const suning = require('./scripts/suning')
-const meituan = require('./scripts/美团')
-const haidilao = require('./scripts/海底捞')
-const smzdm = require('./scripts/smzdm')
+// const yunshanfu = require('./scripts/云闪付')
+// const yiqianbao = require('./scripts/壹钱包')
+// const pinganzhengquan = require('./scripts/平安证券')
+// const liantong = require('./scripts/联通营业厅')
+// const jd = require('./scripts/京东')
+// const jdWallet = require('./scripts/京东金融')
+// const kfc = require('./scripts/kfc')
+// const lynkco = require('./scripts/lynkco')
+// const dazhong = require('./scripts/大众点评')
+// const pahcz = require('./scripts/平安好车主')
+// const suning = require('./scripts/suning')
+// const meituan = require('./scripts/美团')
+// const haidilao = require('./scripts/海底捞')
+// const smzdm = require('./scripts/smzdm')
+const mysl = require('./scripts/蚂蚁森林')
 
 const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 
 /**
  * 返回主程序以便启动其他APP，注意赋予主程序后台启动权限
  */
-function launchMainApp () {
+function launchMainApp() {
   if (currentPackage() !== APP_PACKAGE_NAME) {
     launch(APP_PACKAGE_NAME)
     waitForPackage(APP_PACKAGE_NAME)
@@ -33,7 +36,7 @@ function launchMainApp () {
   }
 }
 
-function doTasks (taskArr) {
+function doTasks(taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
     launchMainApp()
@@ -43,25 +46,26 @@ function doTasks (taskArr) {
   }
 }
 
-function start (taskArr) {
+function start(taskArr) {
   unlock()
   doTasks(taskArr)
   log('全部任务执行完毕')
 }
 
 start([
-  yunshanfu,
-  pinganzhengquan,
-  jd,
-  liantong,
-  kfc,
-  jdWallet,
-  yiqianbao,
-  dazhong,
-  pahcz,
-  suning,
-  meituan,
-  haidilao,
-  smzdm,
-  lynkco
+  // yunshanfu,
+  // pinganzhengquan,
+  // jd,
+  // liantong,
+  // kfc,
+  // jdWallet,
+  // yiqianbao,
+  // dazhong,
+  // pahcz,
+  // suning,
+  // meituan,
+  // haidilao,
+  // smzdm,
+  // lynkco,
+  mysl
 ])
